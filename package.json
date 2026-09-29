@@ -1,0 +1,26 @@
+{
+  "name": "chem-balance",
+  "version": "1.0.0",
+  "description": "Windows-local chemical equation balancer and theoretical material balance backend (API + CLI)",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "chem-bal": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node --experimental-sqlite dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "cli": "tsx src/cli/index.ts",
+    "demo": "tsx examples/demo.ts",
+    "test": "node --experimental-sqlite --import tsx --test tests/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
